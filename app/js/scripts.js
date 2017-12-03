@@ -1,3 +1,10 @@
+/***************** FadeOut Scroll ****************/
+
+ $(window).scroll(function(){
+    $("Header").css("opacity", 1 - $(window).scrollTop() / 821);
+   });
+
+
 /***************** Waypoints ******************/
 
 $(document).ready(function() {
@@ -143,3 +150,22 @@ $(window).load(function() {
 	});
 
 });
+/*************** Bg-color scroll ******************/
+
+$( window ).ready(function() {
+  
+    var wHeight = $(window).height();
+
+    $('.slide')
+      .scrollie({
+        scrollOffset : -150,
+        scrollingInView : function(elem) {
+                   
+          var bgColor = elem.data('background');
+          
+          $('body').css('background-color', bgColor);
+          
+        }
+      });
+
+  });
